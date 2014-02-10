@@ -13,7 +13,6 @@ QvkFtp::QvkFtp()
   
   userLineEdit = new QLineEdit( this );
   userLineEdit->setGeometry( 200, 50, 200, 30 );
-  userLineEdit->setText( "volkoh" );//**************************************************************************
   userLineEdit->show();
   
   QLabel *passLabel = new QLabel( this );
@@ -23,7 +22,6 @@ QvkFtp::QvkFtp()
 
   passLineEdit = new QLineEdit( this );
   passLineEdit->setGeometry( 200, 100, 200, 30 );
-  passLineEdit->setText( "d2IvdH5h0j30Wa6Y" ); //*********************************************************************
   passLineEdit->show();
   
   QLabel *serverLabel = new QLabel( this );
@@ -33,7 +31,6 @@ QvkFtp::QvkFtp()
 
   serverLineEdit = new QLineEdit( this );
   serverLineEdit->setGeometry( 200, 150, 200, 30 );
-  serverLineEdit->setText( "www62.your-server.de" );//*****************************************************************
   serverLineEdit->show();
   
   QLabel *dirLabel = new QLabel( this );
@@ -43,12 +40,10 @@ QvkFtp::QvkFtp()
   
   dirLineEdit = new QLineEdit( this );
   dirLineEdit->setGeometry( 200, 200, 200, 30 );
-  dirLineEdit->setText( "/testftp" );
   dirLineEdit->show();
   
   fileLineEdit = new QLineEdit( this );
   fileLineEdit->setGeometry( 100, 250, 300, 30 );
-  fileLineEdit->setText( "/home/vk/Videos/vokoscreen-2014-02-07_22-24-08.avi" );//**************************************
   fileLineEdit->show();
   
   QPushButton *pushButton = new QPushButton( this );
@@ -62,9 +57,11 @@ QvkFtp::QvkFtp()
   uploadButton->setText( "Upload" );
   connect( uploadButton, SIGNAL( clicked() ), SLOT( uploadLocalFile() ) );
 
-  connect( this, SIGNAL( finished( int )), SLOT( myDestroyed() ) );
+  // Wird aufgerufen wenn Fenster geschloßen wird
+  connect( this, SIGNAL( finished( int ) ), SLOT( myDestroyed() ) );
 
   ftp = new QFtp( this );
+  connect( ftp, SIGNAL( stateChanged( int ) ), SLOT( myStateChanged( int ) ) );
 
 }
 
@@ -87,7 +84,6 @@ void QvkFtp::getLocalFile()
 
 void QvkFtp::uploadLocalFile()
 {
-  connect( ftp, SIGNAL( stateChanged( int ) ), SLOT( myStateChanged( int ) ) );
   
   ftp->connectToHost( serverLineEdit->text() );
   ftp->login( userLineEdit->text(), passLineEdit->text() );
@@ -123,7 +119,7 @@ void QvkFtp::myStateChanged( int state )
   }
 }
 
-
+// Wird aufgerufen wenn Fenster geschloßen wird
 void QvkFtp::myDestroyed()
 {
   qDebug() << "[vokoscreen] close ftp connection";

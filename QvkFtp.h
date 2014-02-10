@@ -4,6 +4,11 @@
 #include <QDialog> 
 #include <QLineEdit>
 #include <QFtp>
+#include <QLabel>
+#include <QPushButton>
+#include <QFileDialog>
+#include <QDesktopServices>
+#include <QDebug>
 
 class QvkFtp: public QDialog
 {
@@ -29,6 +34,7 @@ private:
     QLineEdit *userLineEdit;
     QLineEdit *passLineEdit;
     QLineEdit *serverLineEdit;
+    QLineEdit *dirLineEdit;
     QFtp *ftp;
 
   
