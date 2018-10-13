@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>vokoscreen.desktop</id>
+	<metadata_license>CC-BY-SA-4.0</metadata_license>
+	<project_license>GPL-2.0</project_license>
+	<name>vokoscreen</name>
+	<summary>Screencast creator</summary>
+	
+	<description>
+		<p>
+			vokoscreen is an easy to use screencast creator to record educational videos,
+			live recordings of browser, installation, videoconferences, etc. 
+		</p>
+	</description>
+	
+	<launchable type="desktop-id">vokoscreen.desktop</launchable>
+	
+	<screenshots>
+		<screenshot type="default">
+			<image>http://linuxecke.volkoh.de/vokoscreen/vokoscreen-picture-screen.png</image>
+		</screenshot>
+		<screenshot>
+			<image>http://linuxecke.volkoh.de/vokoscreen/vokoscreen-picture-audio.png</image>
+		</screenshot>
+		<screenshot>
+			<image>http://linuxecke.volkoh.de/vokoscreen/vokoscreen-picture-webcam.png</image>
+		</screenshot>
+		<screenshot>
+			<image>http://linuxecke.volkoh.de/vokoscreen/vokoscreen-picture-area.png</image>
+		</screenshot>
+	</screenshots>
+	
+	<url type="homepage">http://linuxecke.volkoh.de/vokoscreen/vokoscreen.html</url>
+	<url type="bugtracker">https://github.com/vkohaupt/vokoscreen/issues</url>
+	<url type="translate">https://www.transifex.com/vkohaupt/vokoscreen/</url>
+</component>
