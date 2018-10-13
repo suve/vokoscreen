@@ -57,11 +57,13 @@ image.path = $$PREFIX/share/pixmaps
 image.files += applications/vokoscreen.png
 desktop.path = $$PREFIX/share/applications
 desktop.files += applications/vokoscreen.desktop
+appdata.path = $$PREFIX/share/metainfo
+appdata.files += metainfo/vokoscreen.appdata.xml
 man.path = $$PREFIX/share
 man.files += man
 target.path = $$PREFIX/bin
 
-INSTALLS += target image desktop man
+INSTALLS += target image desktop appdata man
 
 # Clean target
 QMAKE_CLEAN += $$TARGET */*~
